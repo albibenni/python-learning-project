@@ -7,9 +7,11 @@ router = APIRouter(
     responses={404: {"description": "Not found"}},
 )
 
+
 @router.get("/")
 def read_root():
     return {"Hello": "World"}
+
 
 @router.get("/list-comprehension")
 def read_item():
