@@ -15,5 +15,5 @@ def read_root():
 
 @router.get("/list-comprehension")
 def read_item():
-    x = [[j for j in range(5)] for i in range(10)]
+    x = [[j for j in range(5) if j % 2 == 1] for i in range(10)]
     return x
