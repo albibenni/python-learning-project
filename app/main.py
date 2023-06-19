@@ -1,7 +1,9 @@
 from fastapi import FastAPI
+from .routers import method_testing
 
 app = FastAPI()
 
+app.include_router(method_testing.router)
 
 @app.get("/")
 def read_root():
@@ -16,4 +18,4 @@ def read_item(item_id: int, q: str = None):
 if __name__ == "__main__":
     import uvicorn
 
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    uvicorn.run(app, host="0.0.0.0", port=8080)
