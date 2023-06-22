@@ -31,6 +31,10 @@ items = {
 def index() -> dict[str, dict[int, Item]]:
     return {"items": items}
 
+@app.get("/test")
+def index() -> dict[str, dict[int, Item]]:
+    return {"items": items}
+
 
 @app.get("/items/{item_id}")
 def query_item_by_id(item_id: int) -> Item:
